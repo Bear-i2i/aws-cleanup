@@ -1,0 +1,8 @@
+
+<h1>AWS service: {{resource}}</h1>
+
+<h3 style="color: red;">{{error}}</h3>
+<h3>Deleted resources</h3>
+<ul style="list-style-type: decimal;color: red;">{{#each deleted}}<li>{{ resource }}</li>{{/each}}</ul>
+<h3>Skipped resources</h3>
+<ul style="list-style-type: decimal;color: green;">{{#each skipped}}<li>{{ resource }}</li>{{/each}}</ul>

@@ -1,0 +1,33 @@
+{
+    "functions":[
+        "aws-tag-remediation",
+        "aws-controltower-NotificationForwarder",
+        "StackSet-CustomControlTow-IamPasswordPolicyCustomR-RVpwjTzy9GqN",
+        "TagReplicatorForAWSBackup-uea1-enext-001",
+
+        "aws-controltower-NotificationForwarder",
+
+        "lamb-lab-ccoe-s3-cleanup-001",
+        "lamb-lab-ccoe-vpc-cleanup-001",
+        "lamb-lab-ccoe-lambda-cleanup-001",
+        "lamb-lab-ccoe-dynamo-cleanup-001"
+    ],
+    "applications":[
+
+    ],
+    "layers":[
+        "sqlalchemy_lambda",
+        "sqlalchemy",
+        "psycopg2",
+        "moment-layer",
+        "flask",
+        "boto3",
+        "SampleLayer"
+    ],
+    "code_sing_configurations":[
+
+    ],
+    "replicas":[
+
+    ]
+}

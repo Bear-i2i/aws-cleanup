@@ -1,0 +1,5 @@
+ 
+ -> owner , flag if is public or not , region
+
+
+git clone codecommit::us-east-1://CFCT@custom-control-tower-configuration

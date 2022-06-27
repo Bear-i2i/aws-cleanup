@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  Topic:
+    Type: 'AWS::SNS::Topic'
+    Properties: 
+      TopicName: 'topic-lab-ccoe-cleanup-001'
+  S3:
+    Type: 'AWS::SNS::Subscription'
+    Properties:
+      TopicArn: !Ref Topic
+      Protocol: lambda
+      Endpoint: arn:aws:lambda:us-east-1:609826415497:function:lamb-lab-ccoe-s3-cleanup-001
+  Lambda:
+    Type: 'AWS::SNS::Subscription'
+    Properties:
+      TopicArn: !Ref Topic
+      Protocol: lambda
+      Endpoint: arn:aws:lambda:us-east-1:609826415497:function:lamb-lab-ccoe-lambda-cleanup-001
+  EventRule:
+    Type: 'AWS::Events::Rule'
+    Properties:
+      Description: 'Rule to delete aws resources every certain time'
+      Name: 'eventr-lab-ccoe-cleanup-001'
+      ScheduleExpression: 'rate(50 days)'
+      Targets:
+        - 
+          Arn: !Ref Topic
+          Id: 'IdTopic'
+  Dynamo:
+    Type: 'AWS::SNS::Subscription'
+    Properties:
+      TopicArn: !Ref Topic
+      Protocol: lambda
+      Endpoint: arn:aws:lambda:us-east-1:609826415497:function:lamb-lab-ccoe-dynamo-cleanup-001
+  VPC:
+    Type: 'AWS::SNS::Subscription'
+    Properties:
+      TopicArn: !Ref Topic
+      Protocol: lambda
+      Endpoint: arn:aws:lambda:us-east-1:609826415497:function:lamb-lab-ccoe-vpc-cleanup-001

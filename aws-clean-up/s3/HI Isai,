@@ -1,0 +1,27 @@
+HI Isai,
+
+ 
+
+This looks good.  Could you please also include the old Landing Zone core accounts and the new proposed names for them (like adding a “old” as a suffix)?
+
+ 
+
+Thanks,
+
+ 
+
+ ============================
+
+
+Check With AWS support is there is a work around , and confirm if recovery is succesfull 
+
+ssop-all-stg-developers-001
+ssop-all-all-developers-001
+
+$res=Get-AzResource
+foreach ($r in $res)
+{
+    Remove-AzResource -ResourceId $r.ResourceId -Force   
+} 
+
+raise a suppert ticket to ask about AWs config has a large amount 

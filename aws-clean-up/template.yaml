@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Timeout: 900
+Resources:
+  S3LambdaFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: lamb-lab-ccoe-s3-cleanup-001
+      CodeUri: s3/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Policies:
+        - AmazonS3FullAccess
+  LambdaLambdaFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: lamb-lab-ccoe-lambda-cleanup-001
+      CodeUri: lambd/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Policies:
+        - AWSLambda_FullAccess
+  DynamoLambdaFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: lamb-lab-ccoe-dynamo-cleanup-001
+      CodeUri: dynamo/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Policies:
+        - AmazonDynamoDBFullAccess
+  VPCLambdaFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: lamb-lab-ccoe-vpc-cleanup-001
+      CodeUri: vpc/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Policies:
+        - AmazonVPCFullAccess

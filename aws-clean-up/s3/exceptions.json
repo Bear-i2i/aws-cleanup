@@ -1,0 +1,13 @@
+{
+    "buckets":[
+        "aws-cloudtrail-logs-609826415497-1426559a",
+        "aws-cloudtrail-logs-609826415497-c5d10368",
+        "cf-templates-4j3jshiz9zcs-ap-southeast-1",
+        "cf-templates-4j3jshiz9zcs-us-east-1",
+        "config-rule-code-bucket-609826415497-us-east-1",
+        "ek-rl",
+        "ritambhraenext",
+        "s3-datasync-lab-001",
+        "aws-sam-cli-managed-default-samclisourcebucket-1gmbo6b8lrlez"
+    ]
+}
